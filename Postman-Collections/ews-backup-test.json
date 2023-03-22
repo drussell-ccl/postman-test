@@ -69,7 +69,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ccl=\"CCL_Ebos_Webservice\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ccl:CountryIdFromCode>\r\n         <!--Optional:-->\r\n         <ccl:code>IT</ccl:code>\r\n      </ccl:CountryIdFromCode>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+							"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ccl=\"CCL_Ebos_Webservice\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ccl:CountryIdFromCode>\r\n         <!--Optional:-->\r\n         <ccl:code>GB</ccl:code>\r\n      </ccl:CountryIdFromCode>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
 						},
 						"url": "{{url}}/{{addressService}}"
 					},
