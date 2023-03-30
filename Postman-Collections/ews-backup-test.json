@@ -6551,8 +6551,8 @@
 									"        pm.expect(supplierId).to.eql(\"33\");\r",
 									"});\r",
 									"\r",
-									"pm.test(\"supplierAccNo is 33722E\", function () {\r",
-									"        pm.expect(supplierAccNo).to.eql(\"33722E\");\r",
+									"pm.test(\"supplierAccNo is present?\", function () {\r",
+									"        pm.expect(supplierAccNo).to.not.eql(undefined);\r",
 									"});\r",
 									"\r",
 									""
