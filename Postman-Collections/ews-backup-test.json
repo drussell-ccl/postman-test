@@ -11601,7 +11601,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ccl=\"CCL_Ebos_Webservice\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ccl:GetDirectRepresentationFile>\r\n         <ccl:customerId>75759</ccl:customerId>\r\n         <ccl:supplierId>123456</ccl:supplierId>\r\n      </ccl:GetDirectRepresentationFile>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+							"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ccl=\"CCL_Ebos_Webservice\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ccl:GetDirectRepresentationFile>\r\n         <ccl:customerId>81314</ccl:customerId>\r\n         <ccl:supplierId>6276</ccl:supplierId>\r\n      </ccl:GetDirectRepresentationFile>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
 							"options": {
 								"raw": {
 									"language": "xml"
