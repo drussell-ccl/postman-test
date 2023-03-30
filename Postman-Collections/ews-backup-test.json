@@ -11499,8 +11499,8 @@
 									"    pm.response.to.have.status(500);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Customer Name is Test Customer: Webservices Test Customer\", function () {\r",
-									"        pm.expect(bodyError.faultstring).to.contain(\"Can not retrieve the requested Direct Representation File with name: DRFileNameTest\");\r",
+									"pm.test(\"Correct error given\", function () {\r",
+									"        pm.expect(bodyError.faultstring).to.contain(\"Can not retrieve the requested Direct Representation File with name: DRDoesntExistFileName\");\r",
 									"    });\r",
 									"}\r",
 									"\r",
@@ -11535,7 +11535,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ccl=\"CCL_Ebos_Webservice\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ccl:GetDirectRepresentationFile>\r\n         <ccl:customerId>28037</ccl:customerId>\r\n         <ccl:supplierId>6276</ccl:supplierId>\r\n      </ccl:GetDirectRepresentationFile>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+							"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ccl=\"CCL_Ebos_Webservice\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ccl:GetDirectRepresentationFile>\r\n         <ccl:customerId>81314</ccl:customerId>\r\n         <ccl:supplierId>16255</ccl:supplierId>\r\n      </ccl:GetDirectRepresentationFile>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
 							"options": {
 								"raw": {
 									"language": "xml"
