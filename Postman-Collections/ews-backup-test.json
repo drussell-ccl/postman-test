@@ -5397,13 +5397,13 @@
 							},
 							{
 								"key": "SOAPAction",
-								"value": "\"CCL_EBOS_WebService/GetBuyerOrderTrackingData\"",
+								"value": "\"CCL_EBOS_WebService/GetBuyerOrderTrackingDataById\"",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ccl=\"CCL_EBOS_WebService\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ccl:GetBuyerOrderTrackingDataById>\r\n         <ccl:orderId>{{orderId}}</ccl:orderId>\r\n      </ccl:GetBuyerOrderTrackingDataById>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+							"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ccl=\"CCL_EBOS_WebService\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ccl:GetBuyerOrderTrackingDataById>\r\n         <ccl:orderId>11292280</ccl:orderId>\r\n      </ccl:GetBuyerOrderTrackingDataById>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
 						},
 						"url": "{{url}}/{{orderService}}"
 					},
@@ -11485,68 +11485,6 @@
 			"name": "DirectRepresentationFile",
 			"item": [
 				{
-					"name": "GetDirectRepresentationFileError",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "4e4ebde0-1541-4a04-bd25-d511e8b0e152",
-								"exec": [
-									"try {\r",
-									"var bodyError = xml2Json(responseBody)[\"soap:Envelope\"][\"soap:Body\"][\"soap:Fault\"]\r",
-									"\r",
-									"pm.test(\"Status code is 500\", function () {\r",
-									"    pm.response.to.have.status(500);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Correct error given\", function () {\r",
-									"        pm.expect(bodyError.faultstring).to.contain(\"Can not retrieve the requested Direct Representation File with name: DRDoesntExistFileName\");\r",
-									"    });\r",
-									"}\r",
-									"\r",
-									"catch (e) {\r",
-									"\r",
-									"    pm.test(\"Exception is thrown during testing\", function () {\r",
-									"        pm.expect(e).to.be.null;\r",
-									"    });\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "d8bbb5f3-9678-4076-bd20-f99dada6a38c",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "text/xml",
-								"type": "text"
-							},
-							{
-								"key": "SOAPAction",
-								"value": "\"CCL_Ebos_Webservice/GetDirectRepresentationFile\"",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ccl=\"CCL_Ebos_Webservice\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ccl:GetDirectRepresentationFile>\r\n         <ccl:customerId>81314</ccl:customerId>\r\n         <ccl:supplierId>16255</ccl:supplierId>\r\n      </ccl:GetDirectRepresentationFile>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
-							"options": {
-								"raw": {
-									"language": "xml"
-								}
-							}
-						},
-						"url": "{{url}}/{{customerService}}"
-					},
-					"response": []
-				},
-				{
 					"name": "GetDirectRepresentationFile",
 					"event": [
 						{
@@ -11608,6 +11546,68 @@
 						"body": {
 							"mode": "raw",
 							"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ccl=\"CCL_Ebos_Webservice\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ccl:GetDirectRepresentationFile>\r\n         <ccl:customerId>81314</ccl:customerId>\r\n         <ccl:supplierId>6276</ccl:supplierId>\r\n      </ccl:GetDirectRepresentationFile>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "{{url}}/{{customerService}}"
+					},
+					"response": []
+				},
+				{
+					"name": "GetDirectRepresentationFileError",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4e4ebde0-1541-4a04-bd25-d511e8b0e152",
+								"exec": [
+									"try {\r",
+									"var bodyError = xml2Json(responseBody)[\"soap:Envelope\"][\"soap:Body\"][\"soap:Fault\"]\r",
+									"\r",
+									"pm.test(\"Status code is 500\", function () {\r",
+									"    pm.response.to.have.status(500);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct error given\", function () {\r",
+									"        pm.expect(bodyError.faultstring).to.contain(\"Can not retrieve the requested Direct Representation File with name: DRDoesntExistFileName\");\r",
+									"    });\r",
+									"}\r",
+									"\r",
+									"catch (e) {\r",
+									"\r",
+									"    pm.test(\"Exception is thrown during testing\", function () {\r",
+									"        pm.expect(e).to.be.null;\r",
+									"    });\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "d8bbb5f3-9678-4076-bd20-f99dada6a38c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml",
+								"type": "text"
+							},
+							{
+								"key": "SOAPAction",
+								"value": "\"CCL_Ebos_Webservice/GetDirectRepresentationFile\"",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ccl=\"CCL_Ebos_Webservice\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ccl:GetDirectRepresentationFile>\r\n         <ccl:customerId>81314</ccl:customerId>\r\n         <ccl:supplierId>16255</ccl:supplierId>\r\n      </ccl:GetDirectRepresentationFile>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
 							"options": {
 								"raw": {
 									"language": "xml"
